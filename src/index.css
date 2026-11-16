@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  body {
+    background-color: #F8F8F5;
+    color: #252B2A;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', 'Inter', system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F2ED;
+}
+::-webkit-scrollbar-thumb {
+  background: #D1D7D4;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #949E9A;
+}
+
+/* Gentle pulse and floating animations */
+@keyframes softFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes ambientGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes mapPulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+.animate-float-slow {
+  animation: softFloat 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: softFloat 7s ease-in-out 2s infinite;
+}
+
+.animate-glow {
+  animation: ambientGlow 8s ease-in-out infinite;
+}
+
+.animate-map-pulse {
+  animation: mapPulse 3s ease-in-out infinite;
+}
+
+/* Glass card styling */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(231, 233, 226, 0.8);
+}
+
+.glass-card-dark {
+  background: rgba(36, 55, 48, 0.9);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(88, 120, 107, 0.25);
+}
